@@ -1,0 +1,1 @@
+FlatMap<FlatMap<FlatMap<std::str::Lines<'_>, std::str::Split<'_, &str>, {closure@src\main.rs:15:19: 15:25}>, std::str::Split<'_, &str>, {closure@src\main.rs:16:19: 16:25}>, String, {closure@src\main.rs:17:19: 17:25}>

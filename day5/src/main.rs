@@ -8,6 +8,8 @@ fn main() {
 
     let mut c = 1;
     let mut seed: i128 = 0;
+    let maps = list[3..].to_vec();
+    let mut mins_part2:Vec<i128> = Vec::new();
 
     for num in seeds.clone(){
         if c % 2 == 1{
@@ -23,19 +25,23 @@ fn main() {
             }
             c += 1;
         }
-    }  
-    println!("seeds done");
+        if c % 2 == 0{
+            // do the logic
+            let min_partial_num = logic(&mut seeds_part2, &maps);
+            mins_part2.push(min_partial_num);
+            seeds_part2.clear();
+        }
+    }
+  
 
-    let maps = list[3..].to_vec();
+
     logic(&mut seeds, &maps);  
     println!("part1 done");
-    logic(&mut seeds_part2, &maps);
-    println!("part2 done")
-
-
+    let min_value_part2 = mins_part2.iter().cloned().min().unwrap_or(0);
+    println!("part2 {:?}", min_value_part2)
 }
 
-fn logic(seeds: &mut Vec<i128>, maps: &Vec<Vec<i128>>) {
+fn logic(seeds: &mut Vec<i128>, maps: &Vec<Vec<i128>>) -> i128{
     let mut lock = vec![0; seeds.len()];
     let mut counter = 0;
     for each in maps{
@@ -63,10 +69,7 @@ fn logic(seeds: &mut Vec<i128>, maps: &Vec<Vec<i128>>) {
         }
     }
     // println!("{:?}", &seeds);
-
-    if let Some(min_value) = seeds.iter().cloned().min() {
-        println!("{}", min_value);
-    }
+    seeds.iter().cloned().min().unwrap_or(0)
 }
 
 

@@ -11,10 +11,8 @@ struct Directions<'a> {
 fn main() {
     let input = include_str!("in.txt");
 
-    let mut turns: Vec<char> = Vec::new();
-    let mut structs: Vec<Directions> = Vec::new();
-    (structs, turns) = parsing(&input);
-    // part1(&structs, &turns);
+    let (structs, turns) = parsing(&input);
+    part1(&structs, &turns);
     part2(&structs, &turns);
 }
 fn part2 (structs: &Vec<Directions>, turns: &Vec<char>) {

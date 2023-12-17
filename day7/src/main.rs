@@ -10,9 +10,7 @@ struct Combinations {
 
 fn main() {
     let input = include_str!("in.txt");
-    let mut hands: Vec<Vec<char>> = Vec::new();
-    let mut values: Vec<i32> = Vec::new();
-    (hands, values) = parsing(input);
+    let (hands, values) = parsing(input);
 
     let mut ranks: Vec<i32> = Vec::with_capacity(hands.len());
     ranks.resize(hands.len(), 0);
@@ -24,7 +22,7 @@ fn main() {
 fn divede_list(part: i32, hands: &Vec<Vec<char>>, values: &Vec<i32>){
     //dividing
     
-    let mut max_rank = values.len() as i32;
+    let max_rank = values.len() as i32;
     let mut combinations = Combinations {
         five_a_kind: Vec::new(),
         four_a_kind: Vec::new(), 
@@ -182,10 +180,10 @@ fn contains_fullhouse(hand: &Vec<char>, part: i32) -> bool{
             return false
         }
     }
-    if part == 2 && contains_two_pairs(hand) && contains_Js(hand) == 1 {
+    if part == 2 && contains_two_pairs(hand) && contains_js(hand) == 1 {
         return true;
     }
-    if part == 2 && contains_Js(hand) == 0 {
+    if part == 2 && contains_js(hand) == 0 {
         if contains_x_same_signs(3, &hand, part) && contains_x_same_signs(2, &hand, part){
             return true
         }
@@ -214,7 +212,7 @@ fn contains_x_same_signs(num: i32, hand: &Vec<char>, part: i32) -> bool {
             return true;
         }
         if part == 2 {
-            let js_count = contains_Js(&hand);
+            let js_count = contains_js(&hand);
             // if the evaluated sign is not J and the card contains other Js we can promote it
             if counter + js_count == num  && hand[i] != 'J'{
                 return true;
@@ -224,7 +222,7 @@ fn contains_x_same_signs(num: i32, hand: &Vec<char>, part: i32) -> bool {
     return false;
 }
 
-fn contains_Js(hand: &Vec<char>) -> i32 {
+fn contains_js(hand: &Vec<char>) -> i32 {
     let mut result = 0;
     for &each in hand{
         if each == 'J' {

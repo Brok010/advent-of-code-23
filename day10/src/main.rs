@@ -1,3 +1,7 @@
+// it would be ideal to have some list so that if the recursive function run trough some numbers before it wouldnt check for them again
+// but the part 2 is not really a problem for recursive function i dont think anyway so it doesnt rly matter - it would be but some edge cases are hard to
+// contain with this approach
+
 use std::collections::HashSet;
 
 fn main() {
@@ -125,7 +129,6 @@ fn check_surrounding(current_position: &(usize, usize),
             return 0;
         }
     }
-
     
     let mut container = [0; 4];
 

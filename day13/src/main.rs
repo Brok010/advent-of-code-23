@@ -44,7 +44,7 @@ fn field_result(field: &Vec<Vec<char>>) -> usize {
             }
         }
     }
-    if rows_above_mirrage == 0 {
+    if rows_above_mirrage == 0 { //checks if a field has no result - all should have
         println!("fuck")
     }
     rows_above_mirrage

@@ -1,0 +1,1 @@
+C:\Users\Borek\Documents\GitHub\advent-of-code-23\day15\target\debug\day15.exe: C:\Users\Borek\Documents\GitHub\advent-of-code-23\day15\src\in.txt C:\Users\Borek\Documents\GitHub\advent-of-code-23\day15\src\main.rs

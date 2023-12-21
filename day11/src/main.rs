@@ -7,7 +7,6 @@ fn main() {
     let input = fs::read_to_string("src/in.txt").expect("Failed to read file");
     let mut rows: Vec<Vec<char>> = Vec::new();
 
-    let mut coordinates: Vec<(usize, usize)> = Vec::new();
     let list = parse(&input, &mut rows);
     let (coordinates, empty_rows_num, empty_columns_num) = make_lists(&list);
     

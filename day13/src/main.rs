@@ -28,7 +28,7 @@ fn main() {
 fn field_result(field: &Vec<Vec<char>>) -> usize {
     let mut rows_above_mirrage = 0;
 
-    for (i, row) in field.iter().enumerate() {
+    for (i, _) in field.iter().enumerate() {
         if i <= field.len() - 2{
             let different_symbols = different_symbols(&field[i], &field[i + 1]);
             if different_symbols == 0 { // outside
@@ -52,7 +52,7 @@ fn field_result(field: &Vec<Vec<char>>) -> usize {
 
 fn check_row_mirage(i: usize, field: &Vec<Vec<char>>, smudge: usize) -> (i8, usize) {
     // i and i + 1 are the same
-    let mut x = i;
+    let x = i;
     let mut c = 1;
     let mut smudge_check = smudge;
     

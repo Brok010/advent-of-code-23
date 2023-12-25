@@ -21,8 +21,8 @@ fn main() {
 
     //logic - part1
     let mut counter = 0;
-    let mut pos1 = starting_pos;
-    let mut pos2 = starting_pos;
+    let pos1 = starting_pos;
+    let pos2 = starting_pos;
     let mut positions: Vec<(usize, usize)> = Vec::new();
     positions.push(pos1.clone());
     positions.push(pos2.clone());

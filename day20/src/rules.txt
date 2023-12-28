@@ -1,0 +1,14 @@
+// part 1
+
+// 2 pulses low and high - same puls goes to all destinations
+// & conjunction- has memory of the most recent pulse of all that is connected to it - all memory is at first set to low pulse
+// on pulse it updates the stack and then if all in stack are high it sends low else sends high
+// % flip-flop on/off state - first off on low pulse change state if the prev state was on - goes off and also sends low pulse
+                                                                            // off - goes on and also sends high pulse
+// broadcast sends the pulse along
+// priority based each signal is process according to its prio till the end
+// loop start at broadcast that sends low pulse
+
+// basicaly i want to know the loop size in which all flips are gonna be in the off state and all in stacks in low pulse too
+
+// count all pulses sent in each button press, after we find a loop we just project it till the end   

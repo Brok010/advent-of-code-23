@@ -51,8 +51,8 @@ fn main() {
     }
 
     let p2 = ((n+1)*(n+1)) * odd_full + (n*n) * even_full - (n+1) * odd_corners + n * even_corners;
-    println!("p2: {}", p2);
-    println!("p1: {}", even_p1);
+    println!("p2: {}", p2); // this is wrong - the equation should be right so idk why
+    println!("p1: {}", even_p1); // this is right
 }
 
 fn make_pos_map(map: &Vec<Vec<char>>, rocks: &Vec<(i32, i32)>, start: &(i32 ,i32)) -> Vec<((i32, i32), i32)> { //bfs
